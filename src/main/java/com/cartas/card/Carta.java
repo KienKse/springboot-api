@@ -35,7 +35,8 @@ public class Carta implements Serializable {
      */
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false, updatable = false)
     private Long id;
 
     @NotBlank
@@ -56,7 +57,7 @@ public class Carta implements Serializable {
     @NotBlank
     private Integer duracao_efeito_carta;
 
-    @Column(name ="created_on")
+    @Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     @CreatedDate
     private Date createdAt;
